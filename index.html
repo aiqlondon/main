@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIQ London — Automation for Local Business</title>
+  <meta name="description" content="AIQ London helps local businesses in Barnet, Borehamwood and Enfield save time and grow with smart workflow automation. Book a free discovery call today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF7F2;
+      --warm-white: #FFF9F3;
+      --ink: #1C1A18;
+      --ink-soft: #3D3A36;
+      --terracotta: #C9572A;
+      --terracotta-light: #E8855F;
+      --sage: #5A7A5C;
+      --sage-light: #8FAF91;
+      --gold: #C9991A;
+      --gold-light: #F0C94A;
+      --border: #E5DDD4;
+      --shadow: rgba(28,26,24,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 5%;
+      background: rgba(250,247,242,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--terracotta); }
+
+    nav ul {
+      display: flex; gap: 2rem; list-style: none;
+    }
+
+    nav ul a {
+      font-size: 0.9rem; font-weight: 500;
+      color: var(--ink-soft); text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--terracotta); }
+
+    .nav-cta {
+      background: var(--terracotta);
+      color: white !important;
+      padding: 0.55rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 500 !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--terracotta-light) !important;
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      padding: 10rem 5% 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; top: -10%; right: -5%;
+      width: 55%; height: 80%;
+      background: radial-gradient(ellipse at 70% 30%, #F0C94A22 0%, #C9572A11 50%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--terracotta);
+      background: #C9572A15;
+      padding: 0.4rem 1rem; border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--terracotta);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .hero p {
+      font-size: 1.1rem; line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--terracotta);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 500; font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(201,87,42,0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--terracotta-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,87,42,0.35);
+    }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--ink);
+      font-weight: 500; font-size: 0.95rem;
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ink);
+      background: var(--warm-white);
+    }
+
+    /* Hero card stack */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card-stack {
+      position: relative;
+      width: 340px;
+      height: 380px;
+    }
+
+    .hero-card {
+      position: absolute;
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 40px var(--shadow);
+      border: 1px solid var(--border);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-card:nth-child(1) {
+      width: 280px; top: 0; left: 30px;
+      animation-delay: 0s;
+    }
+
+    .hero-card:nth-child(2) {
+      width: 260px; top: 120px; left: 60px;
+      animation-delay: 2s;
+    }
+
+    .hero-card:nth-child(3) {
+      width: 240px; top: 230px; left: 40px;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .card-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; margin-bottom: 0.8rem;
+    }
+
+    .card-icon.orange { background: #C9572A18; }
+    .card-icon.green { background: #5A7A5C18; }
+    .card-icon.gold { background: #C9991A18; }
+
+    .hero-card h4 {
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;
+    }
+
+    .hero-card p {
+      font-size: 0.78rem; color: #888; line-height: 1.5; margin: 0;
+    }
+
+    .card-badge {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 600;
+      padding: 0.2rem 0.6rem; border-radius: 50px;
+      background: #5A7A5C18; color: var(--sage);
+      margin-top: 0.6rem;
+    }
+
+    /* ─── TRUST STRIP ─── */
+    .trust-strip {
+      padding: 1.5rem 5%;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--warm-white);
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 2rem;
+    }
+
+    .trust-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .trust-item span { font-size: 1rem; }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 6rem 5%; }
+
+    .section-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700; line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem; color: var(--ink-soft); line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    #how {
+      background: var(--warm-white);
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .how-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .how-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px var(--shadow);
+    }
+
+    .how-number {
+      font-family: 'Fraunces', serif;
+      font-size: 3.5rem; font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .how-card h3 {
+      font-size: 1.1rem; font-weight: 600; margin-bottom: 0.6rem;
+    }
+
+    .how-card p {
+      font-size: 0.9rem; color: var(--ink-soft); line-height: 1.6;
+    }
+
+    /* ─── INDUSTRIES ─── */
+    #industries .industries-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-bottom: 3.5rem;
+    }
+
+    .industry-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .industry-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      cursor: default;
+    }
+
+    .industry-card:hover {
+      border-color: var(--terracotta);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--shadow);
+    }
+
+    .industry-icon {
+      font-size: 1.8rem; margin-bottom: 0.8rem;
+    }
+
+    .industry-card h3 {
+      font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem;
+    }
+
+    .industry-card p {
+      font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5;
+    }
+
+    .industry-tag {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 600;
+      padding: 0.2rem 0.6rem; border-radius: 50px;
+      background: #C9572A12; color: var(--terracotta);
+      margin-top: 0.7rem;
+    }
+
+    /* ─── AUTOMATIONS ─── */
+    #automations {
+      background: var(--ink);
+      color: white;
+    }
+
+    #automations .section-title { color: white; }
+    #automations .section-label { color: var(--gold-light); }
+    #automations .section-subtitle { color: #aaa; }
+
+    .automation-list {
+      margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .automation-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 1.4rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .automation-item:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(240,201,74,0.3);
+    }
+
+    .automation-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--gold-light);
+      margin-top: 0.35rem; flex-shrink: 0;
+    }
+
+    .automation-item h4 {
+      font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem;
+    }
+
+    .automation-item p {
+      font-size: 0.82rem; color: #999; line-height: 1.5;
+    }
+
+    /* ─── PRICING ─── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .pricing-card {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px var(--shadow);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--terracotta);
+      background: #FFF9F3;
+    }
+
+    .featured-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--terracotta);
+      color: white; font-size: 0.72rem; font-weight: 600;
+      padding: 0.3rem 1rem; border-radius: 50px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pricing-name {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--terracotta);
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-price {
+      font-family: 'Fraunces', serif;
+      font-size: 2.5rem; font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-note {
+      font-size: 0.8rem; color: #999; margin-bottom: 1.5rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features li {
+      font-size: 0.88rem; color: var(--ink-soft);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--sage);
+      font-weight: 700; flex-shrink: 0;
+    }
+
+    .pricing-btn {
+      display: block; text-align: center;
+      padding: 0.85rem;
+      border-radius: 50px;
+      font-weight: 500; font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .pricing-btn.outline {
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+    }
+
+    .pricing-btn.outline:hover { background: var(--cream); }
+
+    .pricing-btn.filled {
+      background: var(--terracotta);
+      color: white;
+      box-shadow: 0 4px 16px rgba(201,87,42,0.2);
+    }
+
+    .pricing-btn.filled:hover {
+      background: var(--terracotta-light);
+      transform: translateY(-1px);
+    }
+
+    /* ─── TESTIMONIAL ─── */
+    #testimonials {
+      background: var(--warm-white);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1rem; letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card blockquote {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1rem; line-height: 1.6;
+      color: var(--ink);
+      margin-bottom: 1.2rem;
+    }
+
+    .testimonial-author {
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; color: white;
+    }
+
+    .author-name {
+      font-size: 0.88rem; font-weight: 600;
+    }
+
+    .author-role {
+      font-size: 0.78rem; color: #999;
+    }
+
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      background: var(--terracotta);
+      padding: 5rem 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute; top: -50%; left: -10%;
+      width: 60%; height: 200%;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-band h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: white;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .cta-band p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem; line-height: 1.6;
+      max-width: 520px; margin: 0 auto 2.5rem;
+    }
+
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: white; color: var(--terracotta);
+      padding: 1rem 2.2rem; border-radius: 50px;
+      font-weight: 600; font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      color: white;
+      padding: 3rem 5% 2rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand .nav-logo { color: white; display: block; margin-bottom: 0.8rem; }
+    .footer-brand p { font-size: 0.85rem; color: #888; line-height: 1.6; max-width: 280px; }
+
+    .footer-col h4 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #666; margin-bottom: 1rem; }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul a { font-size: 0.88rem; color: #aaa; text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: white; }
+
+    .footer-bottom {
+      background: var(--ink);
+      border-top: 1px solid #333;
+      padding: 1.2rem 5%;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+
+    .footer-bottom p { font-size: 0.8rem; color: #555; }
+
+    /* ─── LOCATION BADGE ─── */
+    .location-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8rem; color: #777;
+      margin-top: 1rem;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 8rem; }
+      .hero-visual { display: none; }
+      .how-grid, .pricing-grid, .testimonial-grid { grid-template-columns: 1fr; }
+      .automation-list { grid-template-columns: 1fr; }
+      #industries .industries-intro { grid-template-columns: 1fr; gap: 2rem; }
+      .industry-cards { grid-template-columns: repeat(2, 1fr); }
+      footer { grid-template-columns: 1fr; gap: 2rem; }
+      nav ul { display: none; }
+    }
+
+    @media (max-width: 540px) {
+      .industry-cards { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ─── FADE IN ─── */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1; transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">AIQ<span>.</span>London</a>
+    <ul>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#automations">Automations</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Serving Barnet · Borehamwood · Enfield</div>
+      <h1>Your business,<br />running <em>on autopilot</em></h1>
+      <p>AIQ London helps local businesses save hours every week with smart, affordable workflow automation. No IT team needed — we handle everything.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          📅 Book a Free Discovery Call
+        </a>
+        <a href="#how" class="btn-secondary">
+          See how it works →
+        </a>
+      </div>
+      <div class="location-badge">
+        📍 Based in North London — working with businesses like yours
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-card">
+          <div class="card-icon orange">🏠</div>
+          <h4>Viewing Reminder Sent</h4>
+          <p>Automated SMS to buyer — 2 hrs before viewing</p>
+          <span class="card-badge">✓ Saved 45 mins today</span>
+        </div>
+        <div class="hero-card">
+          <div class="card-icon green">🦷</div>
+          <h4>Recall Letter Generated</h4>
+          <p>Patient due in 6 months — email sent automatically</p>
+          <span class="card-badge">✓ 0 no-shows this week</span>
+        </div>
+        <div class="hero-card">
+          <div class="card-icon gold">📊</div>
+          <h4>Invoice Chase Triggered</h4>
+          <p>Overdue 7 days — polite reminder sent to client</p>
+          <span class="card-badge">✓ £1,200 collected</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-item"><span>⚡</span> Setup in 48–72 hours</div>
+    <div class="trust-item"><span>🔒</span> GDPR compliant</div>
+    <div class="trust-item"><span>🤝</span> No long contracts</div>
+    <div class="trust-item"><span>📍</span> Local, personal service</div>
+    <div class="trust-item"><span>💬</span> Plain-English support</div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="fade-in">
+      <p class="section-label">The Process</p>
+      <h2 class="section-title">Up and running in<br />three simple steps</h2>
+      <p class="section-subtitle">No jargon. No lengthy IT projects. We build, test, and hand over — you just watch it work.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card fade-in">
+        <div class="how-number">01</div>
+        <h3>Free Discovery Call</h3>
+        <p>We spend 15 minutes understanding your workflow — which tasks eat your time, where things fall through the cracks, and where automation can pay for itself fastest.</p>
+      </div>
+      <div class="how-card fade-in">
+        <div class="how-number">02</div>
+        <h3>We Build & Test</h3>
+        <p>We design your automation, build it, run it through rigorous testing, and make sure it works exactly as expected before anything goes live. No guesswork.</p>
+      </div>
+      <div class="how-card fade-in">
+        <div class="how-number">03</div>
+        <h3>You Sit Back</h3>
+        <p>We hand over in plain English — what runs, when, and what to do if anything needs changing. Then we check in at 30 days to make sure you're getting results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section id="industries">
+    <div class="industries-intro">
+      <div class="fade-in">
+        <p class="section-label">Who We Help</p>
+        <h2 class="section-title">Built for the businesses that keep North London running</h2>
+        <p class="section-subtitle">We specialise in local professional services — the kinds of businesses where admin piles up, time is tight, and every missed follow-up costs money.</p>
+      </div>
+      <div class="industry-cards fade-in">
+        <div class="industry-card">
+          <div class="industry-icon">🏠</div>
+          <h3>Estate Agents</h3>
+          <p>Viewing reminders, tenancy renewals, lead follow-ups — automated so nothing slips.</p>
+          <span class="industry-tag">Barnet · Enfield</span>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">🦷</div>
+          <h3>Dental Practices</h3>
+          <p>Recall letters, appointment reminders, review requests — running while you focus on patients.</p>
+          <span class="industry-tag">Reduce no-shows</span>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">📋</div>
+          <h3>Accountants</h3>
+          <p>Document chasing, deadline reminders, client onboarding — stop the inbox overload.</p>
+          <span class="industry-tag">Deadline-ready</span>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">⚖️</div>
+          <h3>Solicitors</h3>
+          <p>Client status updates, document collection, onboarding packs — delivered automatically.</p>
+          <span class="industry-tag">GDPR compliant</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOMATIONS -->
+  <section id="automations">
+    <div class="fade-in">
+      <p class="section-label">What We Automate</p>
+      <h2 class="section-title">Real automations.<br />Real time saved.</h2>
+      <p class="section-subtitle">These aren't theoretical — they're live automations running for businesses just like yours, right now.</p>
+    </div>
+    <div class="automation-list">
+      <div class="automation-item fade-in">
+        <div class="automation-dot"></div>
+        <div>
+          <h4>Appointment & Viewing Reminders</h4>
+          <p>Automatic SMS or email reminders 24hrs and 2hrs before — dramatically reduces no-shows and late cancellations.</p>
+        </div>
+      </div>
+      <div class="automation-item fade-in">
+        <div class="automation-dot"></div>
+        <div>
+          <h4>New Lead Follow-Up Sequence</h4>
+          <p>Enquiry comes in → CRM updated → personalised follow-up sent → task created for your team. All within seconds.</p>
+        </div>
+      </div>
+      <div class="automation-item fade-in">
+        <div class="automation-dot"></div>
+        <div>
+          <h4>Document Chase & Collection</h4>
+          <p>Automated reminders until the client uploads what you need. No more chasing the same person three times.</p>
+        </div>
+      </div>
+      <div class="automation-item fade-in">
+        <div class="automation-dot"></div>
+        <div>
+          <h4>Invoice & Payment Reminders</h4>
+          <p>Polite, timed chasers go out automatically at 7, 14, and 30 days. Collect faster without the awkward calls.</p>
+        </div>
+      </div>
+      <div class="automation-item fade-in">
+        <div class="automation-dot"></div>
+        <div>
+          <h4>Review Request After Service</h4>
+          <p>When a job completes or appointment ends, a review request lands in the client's inbox automatically.</p>
+        </div>
+      </div>
+      <div class="automation-item fade-in">
+        <div class="automation-dot"></div>
+        <div>
+          <h4>Client Onboarding Packs</h4>
+          <p>New client signs up → welcome email, intake form, document checklist, and calendar invite sent instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="fade-in" style="text-align:center; max-width: 560px; margin: 0 auto 3.5rem;">
+      <p class="section-label">Simple Pricing</p>
+      <h2 class="section-title">Transparent. No surprises.</h2>
+      <p class="section-subtitle">One-off setup or ongoing partnership — you choose what fits your business right now.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card fade-in">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price">£599</div>
+        <div class="pricing-note">one-time setup + 30 days support</div>
+        <ul class="pricing-features">
+          <li>1 automation built & tested</li>
+          <li>Plain-English handover doc</li>
+          <li>30-day check-in call</li>
+          <li>Email support for 30 days</li>
+        </ul>
+        <a href="#contact" class="pricing-btn outline">Book a Call</a>
+      </div>
+      <div class="pricing-card featured fade-in">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-name">Growth</div>
+        <div class="pricing-price">£1,999</div>
+        <div class="pricing-note">one-time setup + 3 months support</div>
+        <ul class="pricing-features">
+          <li>3 automations built & tested</li>
+          <li>Full workflow audit included</li>
+          <li>Monthly check-in calls</li>
+          <li>Priority email & phone support</li>
+          <li>Free tweak included each month</li>
+        </ul>
+        <a href="#contact" class="pricing-btn filled">Book a Call</a>
+      </div>
+      <div class="pricing-card fade-in">
+        <div class="pricing-name">Partner</div>
+        <div class="pricing-price">£450<span style="font-size:1.2rem;font-family:'DM Sans'">/mo</span></div>
+        <div class="pricing-note">ongoing retainer, cancel anytime</div>
+        <ul class="pricing-features">
+          <li>Unlimited small tweaks</li>
+          <li>New automation each quarter</li>
+          <li>Proactive monitoring & fixes</li>
+          <li>Dedicated support line</li>
+          <li>First access to new automations</li>
+        </ul>
+        <a href="#contact" class="pricing-btn outline">Book a Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="fade-in" style="text-align:center; max-width:560px; margin: 0 auto 3.5rem;">
+      <p class="section-label">From Local Businesses</p>
+      <h2 class="section-title">What our clients say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We used to spend two hours every Monday morning chasing viewing confirmations. Now it just happens. I genuinely didn't believe it would be this simple."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: var(--terracotta);">SR</div>
+          <div>
+            <div class="author-name">Sarah R.</div>
+            <div class="author-role">Director, Estate Agency · Barnet</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Our no-show rate dropped by over half in the first month. The reminder automation paid for itself in the first week. Genuinely brilliant."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: var(--sage);">DK</div>
+          <div>
+            <div class="author-name">Dr. D. Kapoor</div>
+            <div class="author-role">Principal Dentist · Borehamwood</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Tax season used to mean weeks of chasing clients for documents. This year it was almost painless. The automation does the nagging so I don't have to."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: var(--gold);">PH</div>
+          <div>
+            <div class="author-name">Priya H.</div>
+            <div class="author-role">Chartered Accountant · Enfield</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band" id="contact">
+    <h2>Ready to get your time back?</h2>
+    <p>Book a free 15-minute discovery call. We'll tell you exactly which automation would have the biggest impact for your business — no obligation.</p>
+    <a href="https://calendly.com" target="_blank" class="btn-white">
+      📅 Book Your Free Call
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">AIQ<span style="color:var(--terracotta)">.</span>London</a>
+      <p>Helping local businesses in North London save time and grow with affordable, practical workflow automation.</p>
+      <div class="location-badge" style="color:#555;">
+        📍 Barnet · Borehamwood · Enfield
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#automations">Appointment Reminders</a></li>
+        <li><a href="#automations">Lead Follow-Up</a></li>
+        <li><a href="#automations">Document Chase</a></li>
+        <li><a href="#automations">Invoice Reminders</a></li>
+        <li><a href="#automations">Client Onboarding</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>© 2025 AIQ London. All rights reserved.</p>
+    <p>Made with care in North London 🇬🇧</p>
+  </div>
+
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Smooth active nav highlight
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = document.querySelectorAll('nav ul a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--terracotta)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
